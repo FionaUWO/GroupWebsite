@@ -356,37 +356,30 @@ footer .social a:hover {
     color: #002145;
 }
 
-/* Centering Images */
+/* Centering Text Content */
 .research-content {
-    text-align: center; /* Centers the content, including the image */
+    text-align: center; /* Centers the text content */
 }
 
-.research-image {
-    display: block; /* Ensures the image behaves like a block-level element */
-    margin: 0 auto; /* Horizontally centers the image */
-    width: 40%; /* Optional: Adjust the size of the image */
-    height: auto; /* Maintains aspect ratio */
-}
-
-/* Research Section */
+/* Research Section Styling */
 #research {
     padding: 40px 20px; /* Add spacing around the section */
     background-color: #f9f9f9; /* Light background for readability */
 }
 
-
 /* Research Area Styling */
 .research-area {
-    display: flex; /* Align items horizontally */
-    align-items: center; /* Vertically align content */
+    display: flex; /* Use Flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
     gap: 20px; /* Space between image and text */
     margin-bottom: 40px; /* Space between research topics */
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 /* Research Image Styling */
 .research-area .research-image {
-    width: 450px; /* Set a consistent width for the images */
+    width: 100%; /* Full width */
+    max-width: 600px; /* Limit on larger screens */
     height: auto; /* Maintain aspect ratio */
     border-radius: 10px; /* Rounded corners */
     object-fit: cover; /* Ensure the image fills the container without distortion */
@@ -395,7 +388,8 @@ footer .social a:hover {
 
 /* Research Content Styling */
 .research-content {
-    flex: 1; /* Allow text to take up remaining space */
+    width: 100%; /* Ensure content takes full width */
+    max-width: 800px; /* Optional: Limit maximum width for better readability */
 }
 
 .research-content h3 {
@@ -413,16 +407,9 @@ footer .social a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .research-area {
-        flex-direction: column; /* Stack the image and text vertically */
-        text-align: center; /* Center align text */
-    }
-
-    .research-area .research-image {
-        margin-bottom: 20px; /* Add space below the image */
-    }
+    /* No additional changes needed since the layout is already columnar */
+    /* Optionally, adjust padding or font sizes for better mobile experience */
 }
-
 
 /* News Section Styles */
 #news .container {
