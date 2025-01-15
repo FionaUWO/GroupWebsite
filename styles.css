@@ -356,59 +356,66 @@ footer .social a:hover {
     color: #002145;
 }
 
-/* Centering Text Content */
-.research-content {
-    text-align: center; /* Centers the text content */
-}
-
-/* Research Section Styling */
+/* Base Research Section Styling */
 #research {
-    padding: 40px 20px; /* Add spacing around the section */
-    background-color: #f9f9f9; /* Light background for readability */
+    padding: 40px 20px; /* Spacing around the section */
+    background-color: #f9f9f9;
 }
 
-/* Research Area Styling */
+/* Updated Research Area Styling */
 .research-area {
-    display: flex; /* Use Flexbox for layout */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
+    display: flex;
     gap: 20px; /* Space between image and text */
-    margin-bottom: 40px; /* Space between research topics */
+    margin-bottom: 40px;
+    align-items: center;
+    /* Default to column layout for mobile */
+    flex-direction: column;
 }
 
 /* Research Image Styling */
 .research-area .research-image {
-    width: 100%; /* Full width */
-    max-width: 600px; /* Limit on larger screens */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Rounded corners */
-    object-fit: cover; /* Ensure the image fills the container without distortion */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    width: 100%; /* Full width for responsiveness */
+    max-width: 750px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Research Content Styling */
 .research-content {
-    width: 100%; /* Ensure content takes full width */
+    width: 100%;
     max-width: 800px; /* Optional: Limit maximum width for better readability */
+    text-align: center; /* Center text for mobile */
 }
 
 .research-content h3 {
-    margin: 0 0 10px; /* Add space below the heading */
-    font-size: 1.5rem; /* Font size for subheadings */
-    color: #002145; /* Dark blue */
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+    color: #002145;
 }
 
 .research-content p {
     margin: 0;
-    font-size: 1rem; /* Font size for body text */
-    color: #333; /* Dark gray for better readability */
-    line-height: 1.6; /* Improve readability */
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    /* No additional changes needed since the layout is already columnar */
-    /* Optionally, adjust padding or font sizes for better mobile experience */
+/* For screens wider than 768px, adjust layout to display image on the left and description on the right */
+@media (min-width: 769px) {
+    .research-area {
+        flex-direction: row;
+    }
+    /* Limit the image width to about 40% of the container */
+    .research-area .research-image {
+        flex: 0 0 40%;
+    }
+    /* Allocate the remaining space to the text and align it to the left */
+    .research-area .research-content {
+        flex: 1;
+        text-align: left;
+    }
 }
 
 /* News Section Styles */
