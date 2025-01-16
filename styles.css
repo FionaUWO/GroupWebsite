@@ -1,5 +1,7 @@
-/* Global Styles */
-body {
+/********************************************************
+ * GLOBAL & LAYOUT
+ ********************************************************/
+ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
@@ -15,10 +17,12 @@ body {
     max-width: 90vw; /* Prevent container from growing too large */
 }
 
-/* Header Styles */
+/********************************************************
+ * HEADER
+ ********************************************************/
 header {
     background: white;
-    color: #000000;
+    color: #000;
     padding: 0;
     margin: 0;
     text-align: left;
@@ -27,11 +31,13 @@ header {
 header h1 {
     margin: 0;
     padding: 1vw 0;
-    font-size: 2.5vw; /* Scale font size based on viewport */
+    font-size: 2.5vw;
     font-weight: bold;
 }
 
-/* Navigation Styles */
+/********************************************************
+ * NAVIGATION
+ ********************************************************/
 nav {
     background-color: #002145;
     width: 100%;
@@ -41,8 +47,8 @@ nav {
 
 nav .container {
     display: flex;
-    justify-content: flex-start; /* Ensure items stay in position */
-    flex-wrap: nowrap; /* Prevent navigation items from wrapping */
+    justify-content: flex-start;
+    flex-wrap: nowrap;
     align-items: center;
 }
 
@@ -55,20 +61,22 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 0.5vw; /* Scale spacing */
+    margin: 0 0.5vw;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1.1vw; /* Scale font size */
+    font-size: 1.1vw;
 }
 
 nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Section Styles */
+/********************************************************
+ * SECTIONS (GENERAL)
+ ********************************************************/
 section {
     padding: 2vw 0;
     border-bottom: 0.1vw solid #ddd;
@@ -82,7 +90,7 @@ section:nth-of-type(odd) {
 section h2 {
     text-align: left;
     margin-bottom: 1vw;
-    font-size: 2vw; /* Scale heading size */
+    font-size: 2.4vw;
     color: #002145;
 }
 
@@ -98,107 +106,119 @@ section img {
     height: auto;
 }
 
-/* Responsive Image Grid */
+/********************************************************
+ * RESPONSIVE IMAGE GRID
+ ********************************************************/
 .image-grid {
     display: flex;
     justify-content: center;
-    gap: 2vw; /* Use viewport width for gap */
-    margin-top: 2vw; /* Add some space at the top */
+    gap: 2vw;
+    margin-top: 2vw;
 }
 
 .image-item {
     display: flex;
-    flex-direction: column; /* Stack image and caption vertically */
-    align-items: center; /* Center image and caption horizontally */
-    justify-content: center; /* Center image and caption vertically */
-    text-align: center; /* Ensure the caption is centered */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     flex: 1;
 }
 
 .image-item img {
-    width: 20vw; /* Set width relative to viewport */
-    height: auto; /* Let height adjust based on the aspect ratio */
-    aspect-ratio: 16 / 9; /* Maintain a fixed aspect ratio (16:9) */
-    object-fit: cover; /* Crop image to fit within the container */
-    border-radius: 0.5vw; /* Rounded corners based on viewport width */
+    width: 20vw;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 0.5vw;
     overflow: hidden;
 }
 
 .image-item figcaption {
-    margin-top: 1vw; /* Add some space between image and caption */
-    font-size: 1.2vw; /* Relative font size */
+    margin-top: 1vw;
+    font-size: 1.2vw;
     color: #333;
-    text-align: center; /* Center the caption text */
-    width: 100%; /* Make sure the caption width aligns with the image */
+    width: 100%;
 }
 
-/* Principal Investigator Section */
-#principal-investigator {
-    padding: 40px 20px; /* Add padding for spacing */
-    background-color: #f9f9f9; /* Light background color */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+/********************************************************
+ * PRINCIPAL INVESTIGATOR SECTION (Original Layout)
+ ********************************************************/
+ #principal-investigator {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #principal-investigator .section-title {
     font-size: 2rem;
-    color: #002145; /* Dark blue color for the title */
-    text-align: center; /* Center align the title */
-    margin-bottom: 20px; /* Add spacing below the title */
+    color: #002145;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 #principal-investigator hr {
     border: none;
     height: 2px;
-    background-color: #002145; /* Dark blue line for separation */
-    margin: 10px 0 30px; /* Add spacing around the line */
+    background-color: #002145;
+    margin: 10px 0 30px;
 }
 
-/* Flex Layout for Profile */
+/* 
+   Keeps the two-column layout on larger screens, 
+   .profile-left for text + photo, .profile-right for address/links 
+*/
 .flex-layout {
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-    gap: 20px; /* Space between columns */
-    justify-content: space-between; /* Space out columns */
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
 }
 
-/* Left Column Styles */
 .profile-left {
-    flex: 1; /* Allow the left column to take up remaining space */
-    max-width: 60%; /* Limit the maximum width */
+    flex: 1;
+    max-width: 60%;
 }
 
 .team-photo-container {
-    text-align: center; /* Center align the image */
+    text-align: center;
     margin-bottom: 20px;
 }
 
 .team-photo-rectangular {
-    width: 100%; /* Full width within the container */
-    max-width: 250px; /* Limit the maximum size of the photo */
-    height: auto; /* Maintain the aspect ratio */
-    border-radius: 15px; /* Rounded corners for the photo */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Right Column Styles */
 .profile-right {
-    flex: 1; /* Allow the right column to take up remaining space */
-    max-width: 35%; /* Limit the maximum width */
+    flex: 1;
+    max-width: 35%;
 }
 
+/* 
+   Originally defined fonts for .profile-right h4, p.
+   We will unify these with .team-member below,
+   while preserving the structure.
+*/
 .profile-right h4 {
-    font-size: 1.25rem;
-    color: #002145; /* Dark blue for section headers */
+    /* Same as .team-member .team-info h4 in concept */
+    font-size: 1.25rem; 
+    color: #002145;
     margin-bottom: 10px;
 }
 
 .profile-right p {
+    /* Same as .team-member .team-info p in concept */
     font-size: 1rem;
     color: #333;
-    margin-bottom: 15px; /* Spacing between paragraphs */
+    margin-bottom: 15px;
 }
 
+/* Links List */
 .links-list {
     list-style: none;
     padding: 0;
@@ -206,106 +226,127 @@ section img {
 }
 
 .links-list li {
-    margin-bottom: 10px; /* Spacing between links */
+    margin-bottom: 10px;
 }
 
 .links-list a {
-    color: #0056b3; /* Blue for links */
+    color: #0056b3;
     text-decoration: none;
     font-size: 1rem;
 }
 
 .links-list a:hover {
     text-decoration: underline;
-    color: #003366; /* Darker blue on hover */
+    color: #003366;
 }
 
-/* Additional Info Section */
+/* Additional info at bottom of PI section */
 .additional-info {
     margin-top: 30px;
     padding-top: 20px;
-    border-top: 2px solid #ddd; /* Separator above additional info */
+    border-top: 2px solid #ddd;
 }
 
 .additional-info h4 {
+    /* Same as .team-member h4 concept, or you can keep the same as above. */
     font-size: 1.25rem;
-    color: #002145; /* Dark blue for headers */
+    color: #002145;
     margin-bottom: 10px;
 }
 
 .additional-info p,
 .additional-info ul {
+    /* Match .team-member paragraph styles */
     font-size: 1rem;
     color: #333;
-    line-height: 1.6; /* Better readability */
+    line-height: 1.6;
     margin-bottom: 15px;
 }
 
 .additional-info ul {
-    padding-left: 20px; /* Indentation for list */
+    padding-left: 20px;
 }
 
 .additional-info ul li {
     margin-bottom: 10px;
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
+/*
+    Make sure <h3> in PI section is also the same as .team-member h3
+    (In case you have <h3> "Fang (Fiona) Fang, Ph.D." in .profile-left)
+*/
+#principal-investigator h3 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;  /* Same as .team-member .team-info h3 */
+    color: #002145;
+}
+
+/********************************************************
+ * RESPONSIVENESS FOR PRINCIPAL INVESTIGATOR SECTION
+ ********************************************************/
+@media (max-width: 768px) {
+    /*
+       Keep team-member rules intact:
+       .team-member {
+         flex-direction: column;
+         text-align: center;
+       }
+       ...
+    */
+
+    /* For the PI section's flex layout: stack columns, center text */
     .flex-layout {
-        flex-direction: column; /* Stack the columns vertically */
-        align-items: center; /* Center align the content */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
-    .profile-left,
+    .profile-left, 
     .profile-right {
-        max-width: 100%; /* Allow full width for smaller screens */
-        text-align: center; /* Center align text */
-    }
-
-    .profile-right p {
-        text-align: center; /* Center align text */
+        max-width: 100%;
     }
 
     .team-photo-rectangular {
-        max-width: 200px; /* Reduce the size of the photo */
+        max-width: 180px; 
+        border-radius: 50%; 
+        margin-bottom: 15px;
+        object-fit: cover;
+        height: 240px; /* If you want it consistent with .team-photo */
     }
 }
 
-@media (max-width: 576px) {
-    .team-photo-rectangular {
-        max-width: 150px; /* Further reduce the size for small screens */
-    }
+/********************************************************
+ * TEAM MEMBER SECTION
+ ********************************************************/
+ #team-members{
+    background-color:white;
+ }
 
-    .links-list a {
-        font-size: 0.9rem; /* Adjust link size for small screens */
-    }
+ .team-member {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px;
 }
 
-
-/* Team Member Section */
-.team-member {
-    display: flex; /* Align items horizontally */
-    align-items: center; /* Vertically align content */
-    margin-bottom: 20px; /* Space between team members */
-    gap: 20px; /* Space between photo and text */
-}
-
-/* Team Member Photo */
 .team-member .team-photo {
-    width: 180px; /* Smaller photo size for team members */
+    width: 180px;
     height: 240px;
-    border-radius: 50%; /* Oval style for photos */
-    object-fit: cover; /* Ensure image fills the container */
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-/* Team Member Info */
 .team-member .team-info {
-    flex: 1; /* Allow text to take up remaining space */
+    flex: 1;
 }
 
+/*
+    Make sure fonts match those in the PI section
+    (Hence the same .team-member .team-info h3, p, etc. usage)
+*/
 .team-member .team-info h3 {
     margin: 0 0 10px;
-    font-size: 1.5rem; /* Slightly smaller than principal investigator */
+    font-size: 1.5rem;  /* same as #principal-investigator h3 */
     color: #002145;
 }
 
@@ -316,20 +357,11 @@ section img {
     line-height: 1.5;
 }
 
-/* Responsive Design for Team Members */
-@media (max-width: 768px) {
-    .team-member {
-        flex-direction: column; /* Stack photo and text */
-        text-align: center; /* Center align text */
-    }
-
-    .team-member .team-photo {
-        margin-bottom: 15px; /* Add spacing below the photo */
-    }
-}
 
 
-/* Footer Styles */
+/********************************************************
+ * FOOTER
+ ********************************************************/
 footer {
     background: #333;
     color: white;
@@ -348,33 +380,104 @@ footer .social a:hover {
     color: #ddd;
 }
 
-/* Add spacing between subsections */
-#team-members h3 {
-    margin-top: 3vw;
-    margin-bottom: 1.5vw;
-    font-size: 1.8vw;
-    color: #002145;
+/********************************************************
+ * NEWS / TIMELINE SECTION
+ ********************************************************/
+#news .container {
+    margin-top: 2vw;
+    margin-bottom: 2vw;
 }
 
-/* Base Research Section Styling */
+#news h2 {
+    font-size: 2.4vw;
+    color: #002145;
+    margin-bottom: 1vw;
+}
+
+#news p,
+#news .news-content p {
+    font-size: 1.2vw;
+    color: #333;
+    margin-bottom: 1.5vw;
+}
+
+.timeline {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #002145;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2vw;
+    padding-left: 60px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: #0056b3;
+    border: 3px solid #002145;
+    border-radius: 50%;
+}
+
+.news-content {
+    background: #c3dcf9;
+    padding: 1vw;
+    border-radius: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.news-date {
+    display: block;
+    font-weight: bold;
+    color: #002145;
+    margin-bottom: 0.5vw;
+}
+
+.news-content a {
+    text-decoration: none;
+    color: #0056b3;
+    font-weight: bold;
+}
+
+.news-content a:hover {
+    text-decoration: underline;
+}
+
+/********************************************************
+ * RESEARCH SECTION
+ ********************************************************/
 #research {
-    padding: 40px 20px; /* Spacing around the section */
+    padding: 40px 20px;
     background-color: #f9f9f9;
 }
 
-/* Updated Research Area Styling */
 .research-area {
     display: flex;
-    gap: 20px; /* Space between image and text */
+    gap: 20px;
     margin-bottom: 40px;
     align-items: center;
-    /* Default to column layout for mobile */
-    flex-direction: column;
+    flex-direction: column; /* Default for smaller screens */
 }
 
-/* Research Image Styling */
 .research-area .research-image {
-    width: 100%; /* Full width for responsiveness */
+    width: 100%;
     max-width: 750px;
     height: auto;
     border-radius: 10px;
@@ -382,11 +485,10 @@ footer .social a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Research Content Styling */
 .research-content {
     width: 100%;
-    max-width: 800px; /* Optional: Limit maximum width for better readability */
-    text-align: center; /* Center text for mobile */
+    max-width: 800px;
+    text-align: center;
 }
 
 .research-content h3 {
@@ -402,85 +504,111 @@ footer .social a:hover {
     line-height: 1.6;
 }
 
-/* For screens wider than 768px, adjust layout to display image on the left and description on the right */
-@media (min-width: 769px) {
-    .research-area {
-        flex-direction: row;
-    }
-    /* Limit the image width to about 40% of the container */
-    .research-area .research-image {
-        flex: 0 0 40%;
-    }
-    /* Allocate the remaining space to the text and align it to the left */
-    .research-area .research-content {
-        flex: 1;
-        text-align: left;
-    }
-}
-
-/* News Section Styles */
-#news .container {
-    margin-top: 2vw;
-    margin-bottom: 2vw;
-}
-
-#news h2 {
-    font-size: 2vw;
-    color: #002145;
-    margin-bottom: 1vw;
-}
-
-#news p {
-    font-size: 1.2vw;
-    color: #333;
-    margin-bottom: 1.5vw;
-}
-
-/* News List Styles */
-.news-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.news-item {
-    margin-bottom: 1vw;
-    font-size: 1.2vw;
-}
-
-.news-date {
-    font-weight: bold;
-    color: #002145;
-    margin-right: 0.5vw;
-}
-
-.news-item a {
-    text-decoration: none;
-    color: #0056b3;
-}
-
-.news-item a:hover {
-    text-decoration: underline;
-}
-
-/* About Section Styles */
+/********************************************************
+ * ABOUT SECTION
+ ********************************************************/
 #about .container {
     margin-top: 2vw;
     margin-bottom: 2vw;
 }
 
 #about h2 {
-    font-size: 2vw; /* Increase font size for the heading */
+    font-size: 2.4vw;
     color: #002145;
     margin-bottom: 1vw;
 }
 
 #about p {
-    font-size: 1.3vw; /* Increase font size for paragraphs */
-    line-height: 1.3; /* Add spacing between lines for better readability */
+    font-size: 1.3vw;
+    line-height: 1.3;
     color: #333;
     text-align: left;
 }
 
+/********************************************************
+ * MEDIA QUERIES
+ * Additional breakpoints to enhance responsiveness
+ ********************************************************/
+/* Screens up to 768px wide */
+@media (max-width: 768px) {
+    /* Adjust global font size */
+    body {
+        font-size: 1.5vw;
+    }
+    
+    /* Reflow team-member layout */
+    .team-member {
+        flex-direction: column;
+        text-align: center;
+    }
 
+    .team-member .team-photo {
+        margin-bottom: 15px;
+    }
 
+    /* Make Principal Investigator Section fully responsive */
+    .flex-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-left, 
+    .profile-right {
+        max-width: 100%;
+    }
+
+    /* Ensure research-area columns stack */
+    .research-area {
+        flex-direction: column;
+    }
+
+    .research-area .research-image {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .research-area .research-content {
+        text-align: center;
+    }
+
+    /* Navigation fonts */
+    nav ul li a {
+        font-size: 2.5vw;
+    }
+}
+
+/* Screens from 769px and larger */
+@media (min-width: 769px) {
+    /* Return the two-column layout for .research-area */
+    .research-area {
+        flex-direction: row;
+    }
+
+    .research-area .research-image {
+        flex: 0 0 40%;
+    }
+
+    .research-area .research-content {
+        flex: 1;
+        text-align: left;
+    }
+}
+
+/* Optional: Even smaller devices (up to 480px wide) */
+@media (max-width: 480px) {
+    body {
+        font-size: 3vw;
+    }
+
+    nav ul li a {
+        font-size: 4vw;
+    }
+    
+    header h1 {
+        font-size: 5vw;
+    }
+    
+    section h2 {
+        font-size: 4.5vw;
+    }
+}
