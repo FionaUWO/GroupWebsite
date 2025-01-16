@@ -82,7 +82,7 @@ section:nth-of-type(odd) {
 section h2 {
     text-align: left;
     margin-bottom: 1vw;
-    font-size: 2vw; /* Scale heading size */
+    font-size: 2.4vw; /* Scale heading size */
     color: #002145;
 }
 
@@ -470,7 +470,7 @@ footer .social a:hover {
 }
 
 #about h2 {
-    font-size: 2.8vw; /* Increase font size for the heading */
+    font-size: 2.4vw; /* Increase font size for the heading */
     color: #002145;
     margin-bottom: 1vw;
 }
