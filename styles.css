@@ -505,6 +505,15 @@ footer .social a:hover {
 }
 
 /********************************************************
+ * OPPORTUNITIES SECTION
+ ********************************************************/
+#opportunities p {
+    font-size: 1.3vm; /* Now both sections use the same size */
+    line-height: 1.6; /* Optional: Match line height if needed */
+}
+
+
+/********************************************************
  * ABOUT SECTION
  ********************************************************/
 #about .container {
