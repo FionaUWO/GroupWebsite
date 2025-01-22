@@ -480,7 +480,7 @@ footer .social a:hover {
 .research-area .research-image {
     width: 100%;
     max-width: 750px;
-    height: 400px;
+    height: auto;
     border-radius: 10px;
     object-fit: cover;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
