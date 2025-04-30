@@ -477,7 +477,7 @@ footer .social a:hover {
 }
 
 /* From 768px up: two equal columns */
-@media (min-width: 768px) {
+@media (min-width: 960px) {
   .research-area {
     display: grid;
     grid-template-columns: 1fr 1fr;
