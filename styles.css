@@ -507,6 +507,17 @@ footer .social a:hover {
     line-height: 1.6;
 }
 
+@media (max-width: 768px) {
+  .research-area {
+    flex-direction: column;    /* stack image + text */
+  }
+  .research-area > .research-image,
+  .research-area > .research-content {
+    width: 100%;               /* each takes full width */
+    margin: 0 auto;            /* center if needed */
+  }
+}
+
 /********************************************************
  * OPPORTUNITIES SECTION
  ********************************************************/
