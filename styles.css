@@ -470,24 +470,35 @@ footer .social a:hover {
     background-color: #f9f9f9;
 }
 
+/* Default: single column for narrow screens */
 .research-area {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-items: flex-start;
+  display: block;
+  margin-bottom: 40px;
 }
 
-.research-area .research-image,
-.research-area .research-content {
-  flex: 1 1 300px;    /* allow each to grow/shrink, but not below 300px */
-  max-width: 1fr;     /* let flex govern the final size */
+/* From 768px up: two equal columns */
+@media (min-width: 768px) {
+  .research-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;  /* align image + text at top */
+  }
 }
 
+/* Make image always fill its grid cell proportionally */
 .research-area .research-image {
   width: 100%;
   height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+/* And let the text flow naturally in its cell */
+.research-area .research-content {
+  text-align: left;  /* or center, if you prefer */
+}
 .research-content h3 {
     text-align: center;
     margin: 0 0 10px;
