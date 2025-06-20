@@ -362,36 +362,56 @@ section img {
 /********************************************************
  * Gallery
  ********************************************************/
-/* Group Gallery Section */
+/* Enhanced Group Gallery */
 #group-gallery {
-    background-color: #f2f6fc;
-    padding: 2vw 0;
+    background: #f5faff;
+    padding: 3vw 0;
 }
 
-.group-gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 2vw;
-    align-items: center;
-}
-
-.group-photo {
-    max-width: 90%;
+#group-gallery h2 {
     text-align: center;
+    font-size: 2.4vw;
+    margin-bottom: 2vw;
+    color: #002145;
 }
 
-.group-photo img {
+.group-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2vw;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.group-photo-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.group-photo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.group-photo-card img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: block;
+    object-fit: cover;
 }
 
-.group-photo .caption {
-    font-size: 1.2vw;
+.group-photo-card .caption {
+    padding: 1vw;
+    font-size: 1.1vw;
+    text-align: center;
     color: #333;
-    margin-top: 0.8vw;
+    background-color: #f0f4f9;
+    font-style: italic;
 }
+
 
 
 /********************************************************
