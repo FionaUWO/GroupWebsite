@@ -359,6 +359,40 @@ section img {
 }
 
 
+/********************************************************
+ * Gallery
+ ********************************************************/
+/* Group Gallery Section */
+#group-gallery {
+    background-color: #f2f6fc;
+    padding: 2vw 0;
+}
+
+.group-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    align-items: center;
+}
+
+.group-photo {
+    max-width: 90%;
+    text-align: center;
+}
+
+.group-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.group-photo .caption {
+    font-size: 1.2vw;
+    color: #333;
+    margin-top: 0.8vw;
+}
+
 
 /********************************************************
  * FOOTER
