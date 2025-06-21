@@ -1,7 +1,7 @@
 /********************************************************
  * GLOBAL & LAYOUT
  ********************************************************/
- body {
+body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
@@ -75,6 +75,33 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
+/* Mobile-first navigation adjustments */
+@media (max-width: 768px) {
+    nav .container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2vw;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1vw;
+    }
+
+    nav ul li {
+        margin: 1vw 0;
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 1vw 0;
+        text-align: center;
+        font-size: 3.5vw; /* Adjust for better readability on smaller screens */
+    }
+}
+
 /********************************************************
  * SECTIONS (GENERAL)
  ********************************************************/
@@ -115,6 +142,7 @@ section img {
     justify-content: center;
     gap: 2vw;
     margin-top: 2vw;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
 }
 
 .image-item {
@@ -124,10 +152,11 @@ section img {
     justify-content: center;
     text-align: center;
     flex: 1;
+    min-width: 250px; /* Ensure a minimum width before wrapping */
 }
 
 .image-item img {
-    width: 20vw;
+    width: 100%; /* Make image fill its item */
     height: auto;
     aspect-ratio: 16 / 9;
     object-fit: cover;
@@ -141,6 +170,220 @@ section img {
     color: #333;
     width: 100%;
 }
+
+@media (max-width: 768px) {
+    .image-grid {
+        flex-direction: column; /* Stack images vertically on smaller screens */
+        align-items: center;
+    }
+
+    .image-item {
+        width: 90%; /* Take up more width on mobile */
+        margin-bottom: 3vw; /* Add space between stacked items */
+    }
+
+    .image-item img {
+        width: 80vw; /* Use viewport width for better scaling */
+        max-width: 300px; /* Cap size for very large mobile screens */
+    }
+
+    .image-item figcaption {
+        font-size: 3vw;
+    }
+}
+
+
+/********************************************************
+ * PRINCIPAL INVESTIGATOR SECTION (Original Layout)
+ ********************************************************/
+#principal-investigator {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#principal-investigator .section-title {
+    font-size: 2rem;
+    color: #002145;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#principal-investigator hr {
+    border: none;
+    height: 2px;
+    background-color: #002145;
+    margin: 10px 0 30px;
+}
+
+/*
+    Keeps the two-column layout on larger screens,
+    .profile-left for text + photo, .profile-right for address/links
+*/
+.flex-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.profile-left {
+    flex: 1;
+    max-width: 60%;
+}
+
+.team-photo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.team-photo-rectangular {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-right {
+    flex: 1;
+    max-width: 35%;
+}
+
+/*
+    Originally defined fonts for .profile-right h4, p.
+    We will unify these with .team-member below,
+    while preserving the structure.
+*/
+.profile-right h4 {
+    /* Same as .team-member .team-info h4 in concept */
+    font-size: 1.25rem;
+    color: #002145;
+    margin-bottom: 10px;
+}
+
+.profile-right p {
+    /* Same as .team-member .team-info p in concept */
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Links List */
+.links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links-list li {
+    margin-bottom: 10px;
+}
+
+.links-list a {
+    color: #0056b3;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.links-list a:hover {
+    text-decoration: underline;
+    color: #003366;
+}
+
+/* Additional info at bottom of PI section */
+.additional-info {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #ddd;
+}
+
+.additional-info h4 {
+    /* Same as .team-member h4 concept, or you can keep the same as above. */
+    font-size: 1.25rem;
+    color: #002145;
+    margin-bottom: 10px;
+}
+
+.additional-info p,
+.additional-info ul {
+    /* Match .team-member paragraph styles */
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.additional-info ul {
+    padding-left: 20px;
+}
+
+.additional-info ul li {
+    margin-bottom: 10px;
+}
+
+/*
+    Make sure <h3> in PI section is also the same as .team-member h3
+    (In case you have <h3> "Fang (Fiona) Fang, Ph.D." in .profile-left)
+*/
+#principal-investigator h3 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;  /* Same as .team-member .team-info h3 */
+    color: #002145;
+}
+
+/********************************************************
+ * RESPONSIVENESS FOR PRINCIPAL INVESTIGATOR SECTION
+ ********************************************************/
+@media (max-width: 768px) {
+    /*
+        Keep team-member rules intact:
+        .team-member {
+          flex-direction: column;
+          text-align: center;
+        }
+        ...
+    */
+
+    /* For the PI section's flex layout: stack columns, center text */
+    .flex-layout {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-left,
+    .profile-right {
+        max-width: 100%;
+    }
+
+    .team-photo-rectangular {
+        max-width: 180px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+        object-fit: cover;
+        height: 180px; /* Make it a perfect circle on mobile */
+    }
+
+    #principal-investigator .section-title {
+        font-size: 5vw; /* Adjust font size for mobile */
+    }
+
+    #principal-investigator h3,
+    .profile-right h4,
+    .additional-info h4 {
+        font-size: 4vw; /* Adjust font size for mobile */
+    }
+
+    .profile-right p,
+    .links-list a,
+    .additional-info p,
+    .additional-info ul li {
+        font-size: 3.5vw; /* Adjust font size for mobile */
+    }
+}
+
 
 /********************************************************
  * PRINCIPAL INVESTIGATOR SECTION (Original Layout)
@@ -283,71 +526,154 @@ section img {
 }
 
 /********************************************************
- * RESPONSIVENESS FOR PRINCIPAL INVESTIGATOR SECTION
+ * PRINCIPAL INVESTIGATOR SECTION (Original Layout, now Responsive)
  ********************************************************/
-@media (max-width: 768px) {
-    /*
-       Keep team-member rules intact:
-       .team-member {
-         flex-direction: column;
-         text-align: center;
-       }
-       ...
-    */
+ #principal-investigator {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-    /* For the PI section's flex layout: stack columns, center text */
-    .flex-layout {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+#principal-investigator .section-title {
+    font-size: 2rem;
+    color: #002145;
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-    .profile-left, 
-    .profile-right {
-        max-width: 100%;
-    }
+#principal-investigator hr {
+    border: none;
+    height: 2px;
+    background-color: #002145;
+    margin: 10px 0 30px;
+}
 
-    .team-photo-rectangular {
-        max-width: 180px; 
-        border-radius: 50%; 
-        margin-bottom: 15px;
-        object-fit: cover;
-        height: 240px; /* If you want it consistent with .team-photo */
-    }
+/*
+    Keeps the two-column layout on larger screens,
+    .profile-left for text + photo, .profile-right for address/links
+    Allows wrapping on smaller screens (controlled by media query)
+*/
+.flex-layout {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to stack on smaller screens */
+    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start; /* Aligns content to the top */
+}
+
+.profile-left {
+    flex: 1;
+    max-width: 60%; /* Original proportional width for desktop */
+}
+
+.team-photo-container {
+    text-align: center;
+    margin-bottom: 20px; /* Space below photo */
+}
+
+.team-photo-rectangular {
+    width: 100%;
+    max-width: 250px; /* Max width for desktop rectangular photo */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 15px; /* Rectangular corners for desktop */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+.profile-right {
+    flex: 1;
+    max-width: 35%; /* Original proportional width for desktop */
+}
+
+/* Font sizes for PI's right column and additional info */
+.profile-right h4,
+.additional-info h4 {
+    font-size: 1.25rem;
+    color: #002145;
+    margin-bottom: 10px;
+}
+
+.profile-right p,
+.additional-info p,
+.additional-info ul {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links-list li {
+    margin-bottom: 10px;
+}
+
+.links-list a {
+    color: #0056b3;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.links-list a:hover {
+    text-decoration: underline;
+    color: #003366;
+}
+
+.additional-info {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #ddd;
+}
+
+.additional-info ul {
+    padding-left: 20px;
+}
+
+.additional-info ul li {
+    margin-bottom: 10px;
+}
+
+/* Heading for PI's name in .profile-left */
+#principal-investigator h3 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+    color: #002145;
 }
 
 /********************************************************
- * TEAM MEMBER SECTION
+ * TEAM MEMBER SECTION (Original Layout, now Responsive)
  ********************************************************/
  #team-members{
-    background-color:white;
- }
+    background-color: #b3c5de; /* Changed to match research project section */
+}
 
- .team-member {
-    display: flex;
-    align-items: center;
+.team-member {
+    display: flex; /* Image on left, text on right for desktop */
+    align-items: center; /* Vertically center content */
     margin-bottom: 20px;
     gap: 20px;
 }
 
 .team-member .team-photo {
-    width: 180px;
-    height: 240px;
-    border-radius: 50%;
+    width: 180px; /* Fixed width for desktop */
+    height: 240px; /* Fixed height for desktop */
+    border-radius: 50%; /* Circular photos for desktop */
     object-fit: cover;
 }
 
 .team-member .team-info {
-    flex: 1;
+    flex: 1; /* Allows text content to fill remaining space */
 }
 
-/*
-    Make sure fonts match those in the PI section
-    (Hence the same .team-member .team-info h3, p, etc. usage)
-*/
+/* Font sizes for team member info */
 .team-member .team-info h3 {
     margin: 0 0 10px;
-    font-size: 1.5rem;  /* same as #principal-investigator h3 */
+    font-size: 1.5rem;
     color: #002145;
 }
 
@@ -358,6 +684,97 @@ section img {
     line-height: 1.5;
 }
 
+
+/********************************************************
+ * RESPONSIVENESS FOR TEAM SECTIONS
+ ********************************************************/
+@media (max-width: 768px) {
+    /* Principal Investigator Responsive Adjustments */
+    .flex-layout {
+        flex-direction: column; /* Stack columns vertically on small screens */
+        align-items: center; /* Center items when stacked */
+        text-align: center; /* Center text within PI section */
+    }
+
+    .profile-left,
+    .profile-right {
+        max-width: 100%; /* Take full width on small screens */
+        /* Text alignment handled by .flex-layout's text-align: center */
+    }
+
+    .team-photo-rectangular {
+        width: 180px; /* Smaller, fixed width for mobile PI photo */
+        height: 180px; /* Make it circular on mobile by matching width */
+        border-radius: 50%; /* Circular shape for mobile */
+        margin-bottom: 15px;
+        object-fit: cover; /* Ensure image covers the area */
+    }
+
+    /* Team Member Responsive Adjustments */
+    .team-member {
+        flex-direction: column; /* Stack image and text vertically on small screens */
+        text-align: center; /* Center content when stacked */
+    }
+
+    .team-member .team-photo {
+        width: 150px; /* Smaller width for mobile team member photos */
+        height: 150px; /* Make them circular by matching width */
+        margin-bottom: 15px; /* Space between photo and info */
+    }
+
+    /* Font size adjustments for mobile (using vw for fluidity) */
+    #principal-investigator .section-title {
+        font-size: 5vw;
+    }
+
+    #principal-investigator h3,
+    .profile-right h4,
+    .additional-info h4,
+    .team-member .team-info h3 {
+        font-size: 4.5vw;
+    }
+
+    .profile-right p,
+    .links-list a,
+    .additional-info p,
+    .additional-info ul li,
+    .team-member .team-info p {
+        font-size: 3.5vw;
+    }
+}
+
+/* Optional: Even smaller devices (up to 480px wide) - further adjustments */
+@media (max-width: 480px) {
+    /* PI section adjustments for very small screens */
+    .team-photo-rectangular {
+        width: 140px; /* Even smaller circular photo */
+        height: 140px;
+    }
+
+    /* Team member section adjustments for very small screens */
+    .team-member .team-photo {
+        width: 120px; /* Even smaller circular photo */
+        height: 120px;
+    }
+
+    /* Further font size adjustments for very small screens */
+    #principal-investigator .section-title {
+        font-size: 6vw;
+    }
+    #principal-investigator h3,
+    .profile-right h4,
+    .additional-info h4,
+    .team-member .team-info h3 {
+        font-size: 5.5vw;
+    }
+    .profile-right p,
+    .links-list a,
+    .additional-info p,
+    .additional-info ul li,
+    .team-member .team-info p {
+        font-size: 4vw;
+    }
+}
 
 /********************************************************
  * Gallery
@@ -412,6 +829,26 @@ section img {
     font-style: italic;
 }
 
+@media (max-width: 768px) {
+    .group-gallery-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 4vw; /* More space between stacked cards */
+    }
+
+    .group-photo-card {
+        max-width: 90vw; /* Limit width on smaller screens */
+        margin: 0 auto; /* Center the cards */
+    }
+
+    #group-gallery h2 {
+        font-size: 5vw;
+    }
+
+    .group-photo-card .caption {
+        font-size: 3.5vw;
+        padding: 2vw;
+    }
+}
 
 
 /********************************************************
@@ -433,6 +870,18 @@ footer .social a {
 
 footer .social a:hover {
     color: #ddd;
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 4vw 2vw; /* Increase padding for better touch targets */
+        font-size: 3.5vw;
+    }
+
+    footer .social a {
+        font-size: 4vw; /* Larger social icons */
+        margin: 0 2vw;
+    }
 }
 
 /********************************************************
@@ -516,42 +965,84 @@ footer .social a:hover {
     text-decoration: underline;
 }
 
+/* News/Timeline responsiveness */
+@media (max-width: 768px) {
+    #news h2 {
+        font-size: 5vw;
+        text-align: center;
+    }
+
+    #news p,
+    #news .news-content p {
+        font-size: 3.5vw;
+    }
+
+    .timeline::before {
+        left: 5vw; /* Adjust timeline bar position */
+    }
+
+    .timeline-item {
+        padding-left: 10vw; /* Adjust content padding */
+        margin-bottom: 4vw;
+    }
+
+    .timeline-item::before {
+        left: 3vw; /* Adjust circle position */
+        width: 4vw;
+        height: 4vw;
+        border-width: 0.5vw;
+    }
+
+    .news-content {
+        padding: 3vw;
+    }
+
+    .news-date {
+        font-size: 4vw;
+        margin-bottom: 1vw;
+    }
+
+    .news-content a {
+        font-size: 3.5vw;
+    }
+}
+
 /********************************************************
  * RESEARCH SECTION
  ********************************************************/
 #research {
     padding: 40px 20px;
-    background-color: #f9f9f9;
+    background-color: #b3c5de;
 }
 
 /* Default: single column for narrow screens */
 .research-area {
-  display: block;
-  margin-bottom: 40px;
+    display: block;
+    margin-bottom: 40px;
 }
 
-/* From 768px up: two equal columns */
+/* From 1024px up: two equal columns */
 @media (min-width: 1024px) {
-  .research-area {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    align-items: start;  /* align image + text at top */
-  }
+    .research-area {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        align-items: start; /* align image + text at top */
+    }
 }
 
 /* Make image always fill its grid cell proportionally */
 .research-area .research-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* And let the text flow naturally in its cell */
 .research-area .research-content {
-  text-align: left;  /* or center, if you prefer */
+    text-align: left; /* or center, if you prefer */
 }
 .research-content h3 {
     text-align: center;
@@ -562,27 +1053,46 @@ footer .social a:hover {
 
 .research-content p {
     margin: 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #333;
     line-height: 1.6;
 }
 
 @media (max-width: 768px) {
-  .research-area {
-    flex-direction: column;    /* stack image + text */
-  }
-  .research-area > .research-image,
-  .research-area > .research-content {
-    width: 100%;               /* each takes full width */
-    margin: 0 auto;            /* center if needed */
-  }
+    .research-area {
+        flex-direction: column; /* stack image + text */
+        display: flex; /* Ensure flex behavior */
+        align-items: center; /* Center items when stacked */
+    }
+    .research-area > .research-image,
+    .research-area > .research-content {
+        width: 90%; /* each takes full width, with some margin */
+        margin: 0 auto; /* center if needed */
+        margin-bottom: 20px; /* Space between stacked image and content */
+    }
+
+    .research-content h3 {
+        font-size: 5vw;
+        text-align: center;
+    }
+
+    .research-content p {
+        font-size: 3.5vw;
+        text-align: left; /* Keep text left-aligned even if content is centered */
+    }
 }
 
 /********************************************************
  * OPPORTUNITIES SECTION
  ********************************************************/
 #opportunities p {
-    font-size: 1.3vw; 
+    font-size: 1.3vw;
+}
+
+@media (max-width: 768px) {
+    #opportunities p {
+        font-size: 3.5vw;
+    }
 }
 
 
@@ -607,6 +1117,18 @@ footer .social a:hover {
     text-align: left;
 }
 
+@media (max-width: 768px) {
+    #about h2 {
+        font-size: 5vw;
+        text-align: center;
+    }
+
+    #about p {
+        font-size: 3.5vw;
+        line-height: 1.5;
+    }
+}
+
 /********************************************************
  * MEDIA QUERIES
  * Additional breakpoints to enhance responsiveness
@@ -615,9 +1137,15 @@ footer .social a:hover {
 @media (max-width: 768px) {
     /* Adjust global font size */
     body {
-        font-size: 1.5vw;
+        font-size: 1.5vw; /* This will be overridden by more specific rules below */
     }
-    
+
+    /* Adjust container padding for mobile */
+    .container {
+        padding: 4vw;
+        width: 90vw;
+    }
+
     /* Reflow team-member layout */
     .team-member {
         flex-direction: column;
@@ -634,7 +1162,7 @@ footer .social a:hover {
         align-items: center;
     }
 
-    .profile-left, 
+    .profile-left,
     .profile-right {
         max-width: 100%;
     }
@@ -655,11 +1183,27 @@ footer .social a:hover {
 
     /* Navigation fonts */
     nav ul li a {
-        font-size: 2.5vw;
+        font-size: 2.5vw; /* This is too small, overridden by navigation specific rules */
+    }
+
+    header h1 {
+        font-size: 6vw; /* Larger header for mobile */
+        padding: 4vw 0;
+    }
+
+    section h2 {
+        font-size: 5.5vw; /* Larger section titles for mobile */
+        text-align: center; /* Center section titles on mobile */
+        margin-bottom: 3vw;
+    }
+
+    section p {
+        font-size: 3.8vw; /* General paragraph adjustment */
+        margin-bottom: 2.5vw;
     }
 }
 
-/* Screens from 769px and larger */
+/* Screens from 769px and larger (Desktop/Tablet landscape) */
 @media (min-width: 769px) {
     /* Return the two-column layout for .research-area */
     .research-area {
@@ -679,18 +1223,65 @@ footer .social a:hover {
 /* Optional: Even smaller devices (up to 480px wide) */
 @media (max-width: 480px) {
     body {
-        font-size: 3vw;
+        font-size: 3.5vw; /* Base font size for very small screens */
     }
 
     nav ul li a {
-        font-size: 4vw;
+        font-size: 4.5vw; /* Larger navigation links */
     }
-    
+
     header h1 {
-        font-size: 5vw;
+        font-size: 7vw; /* Even larger header */
     }
-    
+
     section h2 {
-        font-size: 4.5vw;
+        font-size: 6.5vw; /* Even larger section titles */
+    }
+
+    #principal-investigator .section-title,
+    #group-gallery h2,
+    #news h2,
+    #about h2,
+    .research-content h3,
+    .team-member .team-info h3,
+    .profile-right h4,
+    .additional-info h4 {
+        font-size: 6vw; /* Ensure consistent heading sizes on smallest screens */
+    }
+
+    section p,
+    #opportunities p,
+    #about p,
+    #news p,
+    #news .news-content p,
+    .image-item figcaption,
+    .group-photo-card .caption,
+    .team-member .team-info p,
+    .profile-right p,
+    .links-list a,
+    .additional-info p,
+    .additional-info ul li,
+    .news-date,
+    .news-content a {
+        font-size: 4vw; /* Ensure consistent paragraph/text sizes on smallest screens */
+    }
+
+    .timeline::before {
+        left: 6vw; /* Adjust timeline bar position */
+    }
+
+    .timeline-item {
+        padding-left: 12vw; /* Adjust content padding */
+    }
+
+    .timeline-item::before {
+        left: 4vw; /* Adjust circle position */
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .team-photo-rectangular {
+        max-width: 150px; /* Adjust PI photo size for smallest screens */
+        height: 150px;
     }
 }
