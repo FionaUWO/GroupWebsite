@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICCN Lab - Research</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a href="index.html#home"><em>Home</em></a></li>
+                    <li><a href="index.html#about"><em>About</em></a></li>
+                    <li><a href="index.html#news"><em>News</em></a></li>
+                    <li class="active"><a href="team.html"><em>Team</em></a></li> <!-- Active Page -->
+                    <li><a href="research.html"><em>Research</em></a></li>
+                    <li><a href="project.html"><em>Projects</em></a></li>
+                    <li><a href="publications.html"><em>Publications</em></a></li>
+                    <li><a href="index.html#opportunities"><em>Opportunities</em></a></li>
+                    <li><a href="index.html#contact"><em>Contact</em></a></li>
+                </ul>
+            </div>
+        </nav> 
+
+        <div class="container">
+            <h1><strong>AI-Native Connectivity, Optimization and Networking Lab</strong></h1>
+        </div>
+    </header>
+
+    <section id="research">
+        <div class="container">
+            <h2>Current Research Topics</h2>
+            <hr /> 
+            <div class="research-area">
+                <img src="images/pinching_antenna.png" alt="Pinching Antenna Systems" class="research-image">
+                <div class="research-content">
+                    <h3>Pinching Antenna Systems</h3>
+                    <p>
+                       Pinching antenna technology is a promising direction in flexible-antenna systems, offering a low-cost and reconfigurable approach to improve wireless communication. 
+                        Unlike traditional antennas with fixed positions, pinching antennas are created by placing small dielectric elements along a dielectric waveguide. 
+                        This setup allows antennas to be positioned close to users, which helps establish strong line-of-sight links and reduce large-scale path loss. 
+                        The system supports multiple antennas on a single waveguide at no extra hardware cost and aligns well with techniques like non-orthogonal multiple access (NOMA) by enabling signal superposition. 
+                        With the ability to adjust antenna placement to reconfigure channel conditions, pinching antennas provide an efficient and scalable solution for future wireless networks, 
+                        especially in indoor and dense-user scenarios. In this project, we aim to investigate: 1) Low-complexity optimization of pinching antenna placement; 
+                        2) Blockage model in pinching antenna assisted networks; 3) AI-empowered pinching antenna systems
+                    </p>
+                
+                </div>
+            </div>
+            <hr />
+            <hr />
+            
+            <!-- Research Area 1: Communication-Efficient Edge AI -->
+            <div class="research-area">
+                <img src="images/Communication-Efficient_Edge_AI.png" alt="Communication-Efficient Edge AI" class="research-image">
+                <div class="research-content">
+                    <h3>Communication-Efficient Edge AI</h3>
+                    <p>
+                         Edge artificial intelligence (AI), a fusion of edge computing and AI algorithms, 
+                        has attracted significant research interest in recent years. Unlike traditional cloud-based AI, 
+                        which relies on centralized processing of raw data, 
+                        edge AI enables distributed data processing and decision-making directly at the device level, 
+                        effectively mitigating the risk of data leakage. Additionally, 
+                        edge AI offers reduced latency and improved energy efficiency, 
+                        making it well-suited for responsive applications such as industrial IoT, 
+                        autonomous vehicles, and smart home systems. In edge AI systems, 
+                        devices perform local model training using their own data and upload the trained model 
+                        parameters to a coordinating server responsible for global model aggregation and distribution. 
+                        However, the frequent parameter exchange between devices and the server poses challenges to communication 
+                        and training efficiency, which are critical to the performance of edge AI systems. 
+                        This project aims to explore communication-efficient and task-oriented edge AI systems, 
+                        focusing on the following key aspects: 1) Communication-efficient Federated Learning (FL)<a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10255731"><em>(Link)</em></a> and Hierarchical FL 
+                        (HFL)<a href="https://ieeexplore.ieee.org/abstract/document/10562220"><em>(Link)</em></a> over NOMA Networks: Investigating strategies to optimize communication overhead in FL and HFL 
+                        frameworks operating in NOMA networks. 2) Digital Twin-Assisted FL Systems: Leveraging digital twin technology 
+                        to enhance training efficiency and improve resource utilization[3 vtc][4 twc]<a href="https://ieeexplore.ieee.org/abstract/document/10758042"><em>(Link1,</em></a><a href="https://arxiv.org/abs/2501.01584"><em>Link2)</em></a>. 3) Task-Oriented Edge AI Systems: 
+                        Designing edge AI solutions tailored to diverse task requirements across various devices to ensure optimal 
+                        performance and resource allocation.<a href="https://arxiv.org/abs/2501.03448"><em>(Link)</em></a>
+                    </p>
+                
+                </div>
+            </div>
+            <hr />
+            <hr />
+            <div class="research-area">
+                <img src="images/semcom.png" alt="Semantic Communications" class="research-image">
+                <div class="research-content">
+                    <h3>Semantic Communications</h3>
+                    <p>
+                        Benefitting from advancements in micro-electronics and artificial intelligence, 
+                        recent developments in machine learning and end-to-end communication technologies are driving the transformation 
+                        of traditional communication systems toward future paradigms. Semantic communications, 
+                        as an emerging intelligent communication paradigm, focus on exchanging the meaning or semantics extracted from messages 
+                        rather than transmitting the raw bit stream messages directly. By leveraging shared knowledge bases (KBs) 
+                        between the transmitter and receiver, more meaningful semantic information is extracted from the source data prior 
+                        to undergoing semantic and channel encoding at the transmitter. The receiver can recover the source information 
+                        by semantic restoration from the received semantic data through channel and semantic decoding. 
+                        This approach has shown significant potential to address spectrum scarcity and improve communication efficiency, 
+                        garnering growing attention from both industry and academia. In this project, we will investigate 
+                        1) a novel edge-assisted semantic communications framework for resource-constrained IoT devices. 
+                        To the best of our knowledge, this is the first work to study the semantic extraction model selection problem 
+                        in an edge-assisted semantic network<a href="https://ieeexplore.ieee.org/abstract/document/10508943"><em>(Link)</em></a>; 2) a knowledge sharing-enabled task-oriented hybrid semantic-bit communications 
+                        mechanism for multi-cell networks to tackle the KB mismatch challenge<a href="https://arxiv.org/abs/2501.01635"><em>(Link)</em></a>; 3) a collaborative knowledge sharing-empowered 
+                        semantic-bit communications mechanism to maximize the generalized effective semantic transmission rate we derived in 
+                        two-tier edge networks, to overcome the mobile device power limit and harsh channel conditions<a href="https://arxiv.org/abs/2501.01637"><em>(Link)</em></a>.  
+                    </p>
+                </div>
+            </div>
+            <hr />
+            <hr />
+    
+            <div class="research-area">
+                <img src="images/NOMA_Com.png" alt="Non-Orthogonal Multiple Access (NOMA) Communications" class="research-image">
+                <div class="research-content">
+                    <h3>Non-Orthogonal Multiple Access (NOMA) Communications</h3>
+                    <p>
+                        Non-Orthogonal Multiple Access (NOMA), recently introduced for the 3rd Generation Partnership Project 
+                        Long-Term Evolution Advanced (3GPP-LTE-A), presents a promising solution to the challenges faced by 5G networks 
+                        by enabling multiple users to share the same orthogonal resource block. This approach significantly improves 
+                        spectrum efficiency compared to traditional Orthogonal Multiple Access (OMA) methods. As a result, 
+                        it has attracted considerable research interest. The key idea behind NOMA is to exploit differences in users' 
+                        channel conditions. By allocating different power levels to users based on their channel quality, NOMA ensures 
+                        that signals intended for different users can be effectively separated using successive interference cancellation 
+                        (SIC) at the receiver. This enables high-priority users with better channel conditions to decode their signals first 
+                        while allowing users with weaker channels to access the same resources. In this project, we aim to investigate the 
+                        performance gain introduced by NOMA 1) Optimization of beamforming, phase adjustment, and power distribution in a 
+                        multi-cluster RIS-NOMA System 2) Minimization of power consumption in downlink hybrid NOMA networks 
+                        3) Minimization of power consumption in a semantic and bit-based users coexisting NOMA networks.
+                    </p>
+                </div>
+            </div>
+            <hr />
+            <hr />
+
+            <div class="research-area">
+                <img src="images/security.png" alt="Security in Wireless Communications" class="research-image">
+                <div class="research-content">
+                    <h3>Trustworthy Wireless Communications</h3>
+                    <p>
+                        Secure wireless communications face the increasing vulnerabilities caused by the open nature 
+                        of propagation environments, requiring capability of rejecting unauthorized access and protecting signal 
+                        from eavesdropping. To address above two security issues, various mechanisms at physical layer 
+                        are proposed to be potential solutions with advantages of low latency and high compatibility. 
+                        Specifically, artificial noise (AN) and precoding (beamforming) can differentiate legitimate and
+                        illegitimate transmission receptions to achieve secrecy rate, and authentication is to verify 
+                        transceivers based on hardware impairments, channel characteristics, or artificial fingerprint (tag). 
+                        Comprehensive secrecy achieving and authentication enhancement cooperatively provide fundamentals for 
+                        communication security and information confidentiality. 
+                        In this project, to ensure trustworthy communications, we propose several potential methods to comprehensively 
+                        achieve both secrecy and authentication: 1): creating a dual-reference symmetric tag as the reference for one-time
+                        pad encryption and the reference for tag embedding authentication, 2): extracting accuracy channel attributes for key 
+                        generation and channel-based authentication, 3) designing uniquely decomposable constellation with cooperative message 
+                        and tag transmission. 
+                    </p>
+                </div>
+            </div>
+            <hr />
+            <hr />
+
+            <div class="research-area">
+                <img src="images/zero_trust.png" alt="Security in Wireless Communications" class="research-image">
+                <div class="research-content">
+                    <h3>Decentralized Zero Trust Authentication and Authorization</h3>
+                    <p>
+                        Decentralized Zero Trust Authentication and Authorization is an innovative framework designed to enhance the security of large-scale IoT networks. 
+                        Unlike traditional centralized methods that rely on one-time authentication, it leverages the principles of Zero Trust Architecture (ZTA) to ensure continuous 
+                        device verification and fine-grained access control, effectively mitigating risks such as lateral movement attacks and session hijacking. By decentralizing control 
+                        and integrating context-aware decision-making, this framework dynamically adapts to evolving device behaviors and environmental factors, offering a more secure and 
+                        flexible authentication solution. However, implementing decentralized authentication and authorization systems poses challenges, including ensuring efficient 
+                        communication across domains, preserving data privacy, and adapting to the diverse data characteristics inherent in large-scale IoT networks. 
+                        These challenges necessitate innovative mechanisms to optimize performance, reduce network load, and enhance security without compromising privacy or efficiency. 
+                        This project focuses on advancing decentralized zero trust authentication and authorization through the following research objectives: 
+                        1) Continuous and decentralized access control for both intra-domain and cross-domain IoT environments. 
+                        2) Development of privacy-preserving mechanisms that reduce data transmission by securely sharing essential information, 
+                        enhancing efficiency without compromising data security. 3) Real-time adaptability to diverse network conditions through dynamic, 
+                        context-aware evaluation methods and collaborative learning techniques, such as Decentralized Federated Learning (DFL), to support secure and efficient cross-domain authorization processes.
+                    </p>
+                </div>
+            </div>
+            <hr />
+            <hr />
+
+            <div class="research-area">
+                <img src="images/RISs.png" alt="Reconfigurable intelligent surfaces (RISs)" class="research-image">
+                <div class="research-content">
+                    <h3>Reconfigurable intelligent surfaces (RISs)</h3>
+                    <p>
+                        Sixth-generation (6G) networks suffer from serious security risks due to the broadcasting characteristics 
+                        of wireless channels, a large amount of privacy-sensitive data, and the exponential growth of attack vectors. 
+                        However, physical layer security (PLS) is an effective method of securing legitimate transmissions 
+                        by exploiting the dynamic characteristics of wireless communications. Fortunately, 
+                        reconfigurable intelligent surfaces (RISs) have transformed traditional wireless networks 
+                        into smart radio environments without incurring huge costs and increasing complexity, 
+                        enabling a new network paradigm by providing power-efficient, cost-effective services with 
+                        high data rates for 6G networks. Besides, the RIS-aided PLS solutions can be flexibly applied 
+                        to vital 6G technologies, such as multi-access edge computing (MEC), integrated sensing and communication (ISAC), and NOMA. In the project, the RIS-aided PLS communication systems are designed. Specifically, I will 1) introduce the beamforming design of the passive RIS-aided PLS communication system, with considering the spatial location deployment of the RIS. 2) explore the ability of hybrid active/passive RIS to enhance system secure performance. 3) considering the realistic requirements, use RISs to enhance the secure performance of integrated sensing and communication (ISAC). 
+                    </p>
+                </div>
+            </div>
+            <hr />
+            <hr />
+
+<!--             <div class="research-area">
+                <img src="images/IoT.png" alt="Machine Learning in Internet of Things (IoTs)" class="research-image">
+                <div class="research-content">
+                    <h3>Machine Learning in Internet of Things (IoTs)</h3>
+                    <p>
+                        Our research focuses on improving the efficiency and effectiveness of distributed machine learning in Internet of Things (IoT) 
+                        systems, which are increasingly deployed in diverse and resource-constrained environments. 
+                        IoT devices often face significant challenges during distributed training due to the following issues:
+                        1) Straggler Problem: Heterogeneity in IoT devices' computational capabilities can lead to delays, as slower devices, 
+                        or stragglers, hinder the overall training process. 
+                        We design strategies to mitigate these delays and ensure synchronized updates. 
+                        2)Non-IID Data: IoT devices typically generate data that is non-independent and non-identically distributed (non-IID), 
+                        which can negatively impact model convergence and accuracy. We develop approaches to handle this issue, 
+                        promoting robust and generalized learning. 
+                        3)Communication Bottleneck: Limited bandwidth and high communication overhead during the training process 
+                        can significantly slow down learning. We explore methods to optimize communication efficiency while maintaining performance.
+                        By addressing these challenges, our work aims to enable scalable and reliable machine learning systems 
+                        tailored for IoT applications, unlocking their potential for real-time, intelligent decision-making 
+                        in a wide range of domains."
+                    </p>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Intelligent Communication, Computing and Networking Lab. All Rights Reserved.</p>
+            <div class="social">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
