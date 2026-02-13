@@ -1923,7 +1923,8 @@ img {
  * PUBLICATIONS SECTION
  ********************************************************/
 #publications {
-    background: #ffffff;
+    background: linear-gradient(180deg, #f0f4f9 0%, #e1e9f4 100%);
+    border-top: 1px solid rgba(0,0,0,0.05);
 }
 
 #publications h3 {
